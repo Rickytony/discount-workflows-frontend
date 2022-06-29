@@ -19,10 +19,8 @@ export const Form = () => {
     control,
     name: "discounts"
   });
-	const onSubmit = (event, formData) => {
-		event.preventDefault();
-    console.log(formData)
-  };
+	const onSubmit = (data, e) => console.log(data, e);
+  const onError = (errors, e) => console.log(errors, e);
 	return(
 		<Box>
 			<Box pb={5}>
@@ -30,7 +28,12 @@ export const Form = () => {
 					Expiration discounts
 				</Header>
 			</Box>
-			<form id="discountForm" action="" method="post" onSubmit={handleSubmit(onSubmit)}>
+			<form
+				id="discountForm"
+				action="http://localhost:5000/discounts"
+				method="post"
+				onSubmit={handleSubmit(onSubmit, onError)}
+			>
 				{fields.map(({ id }, index) => {
 					return (
 						<div key={id}>
