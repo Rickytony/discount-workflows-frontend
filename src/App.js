@@ -9,12 +9,6 @@ import '@lightspeed/design-system-css';
 function App() {
   return (
     <>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://vendfrontendassets.freetls.fastly.net/fonts/fonts-v3.css"
-        />
-      </head>
       <div className="vd-body">
         <Topbar />
         <Box
